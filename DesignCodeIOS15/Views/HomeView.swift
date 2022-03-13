@@ -9,6 +9,9 @@ import SwiftUI
 
 struct HomeView: View {
     @State var hasScrolled = false
+    @Namespace var namespace
+    @State var show = false
+    @State var showStatusBar = true
 
     var body: some View {
         ZStack {
@@ -19,25 +22,43 @@ struct HomeView: View {
 
                 featured
 
-                Color.clear.frame(height: 1000)
+                Text("Courses".uppercased())
+                    .font(.footnote.weight(.semibold))
+                    .foregroundColor(.secondary)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .padding(.horizontal, 20)
+
+                if !show {
+                    CourseItem(namespace: namespace, show: $show)
+                        .onTapGesture {
+                            withAnimation(.openCard) {
+                                show.toggle()
+                                showStatusBar = false
+                            }
+                        }
+                }
             }
             .coordinateSpace(name: "scroll")
-            .onPreferenceChange(ScrollPreferenceKey.self, perform: { value in
-                withAnimation(.easeInOut) {
-                    if value < 0 {
-                        hasScrolled = true
-                    } else {
-                        hasScrolled = false
-                    }
-                }
 
-            })
             .safeAreaInset(edge: .top, content: {
                 Color.clear.frame(height: 70)
             })
             .overlay(
                 NavigationBar(title: "Featured", hasScrolled: $hasScrolled)
             )
+            if show {
+                CourseView(namespace: namespace, show: $show)
+            }
+        }
+        .statusBar(hidden: !showStatusBar)
+        .onChange(of: show) { newValue in
+            withAnimation(.closeCard) {
+                if newValue {
+                    showStatusBar = false
+                } else {
+                    showStatusBar = true
+                }
+            }
         }
     }
 
@@ -47,6 +68,16 @@ struct HomeView: View {
             Color.clear.preference(key: ScrollPreferenceKey.self, value: proxy.frame(in: .named("scroll")).minY)
         }
         .frame(height: 0)
+        .onPreferenceChange(ScrollPreferenceKey.self, perform: { value in
+            withAnimation(.easeInOut) {
+                if value < 0 {
+                    hasScrolled = true
+                } else {
+                    hasScrolled = false
+                }
+            }
+
+        })
     }
 
     var featured: some View {
