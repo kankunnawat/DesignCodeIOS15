@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		791476BE27E46FDA00E18029 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 791476BD27E46FDA00E18029 /* SignUpView.swift */; };
+		791476C027E48D7E00E18029 /* AngularButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 791476BF27E48D7E00E18029 /* AngularButtonStyle.swift */; };
+		7922FFE527E4D99B0063AC95 /* InputStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7922FFE427E4D99B0063AC95 /* InputStyle.swift */; };
+		7922FFE727E4E52C0063AC95 /* ModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7922FFE627E4E52C0063AC95 /* ModalView.swift */; };
+		7922FFE927E4E5890063AC95 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7922FFE827E4E5890063AC95 /* SignInView.swift */; };
+		7930B3E027E45B4000426BF3 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7930B3DF27E45B4000426BF3 /* SearchView.swift */; };
+		7930B3E227E4639E00426BF3 /* Suggestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7930B3E127E4639E00426BF3 /* Suggestion.swift */; };
 		795E52C127DDDE47008CF240 /* Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795E52C027DDDE47008CF240 /* Styles.swift */; };
 		795E52C327DDE150008CF240 /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795E52C227DDE150008CF240 /* AccountView.swift */; };
 		795E52C527DDF0FA008CF240 /* HexagonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795E52C427DDF0FA008CF240 /* HexagonView.swift */; };
@@ -31,6 +38,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		791476BD27E46FDA00E18029 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
+		791476BF27E48D7E00E18029 /* AngularButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AngularButtonStyle.swift; sourceTree = "<group>"; };
+		7922FFE427E4D99B0063AC95 /* InputStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputStyle.swift; sourceTree = "<group>"; };
+		7922FFE627E4E52C0063AC95 /* ModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalView.swift; sourceTree = "<group>"; };
+		7922FFE827E4E5890063AC95 /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
+		7930B3DF27E45B4000426BF3 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
+		7930B3E127E4639E00426BF3 /* Suggestion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Suggestion.swift; sourceTree = "<group>"; };
 		795E52C027DDDE47008CF240 /* Styles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Styles.swift; sourceTree = "<group>"; };
 		795E52C227DDE150008CF240 /* AccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountView.swift; sourceTree = "<group>"; };
 		795E52C427DDF0FA008CF240 /* HexagonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HexagonView.swift; sourceTree = "<group>"; };
@@ -83,6 +97,10 @@
 				795E52C227DDE150008CF240 /* AccountView.swift */,
 				795E52DD27DE494D008CF240 /* MatchedView.swift */,
 				795E52E127DE53FD008CF240 /* CourseView.swift */,
+				7930B3DF27E45B4000426BF3 /* SearchView.swift */,
+				791476BD27E46FDA00E18029 /* SignUpView.swift */,
+				7922FFE627E4E52C0063AC95 /* ModalView.swift */,
+				7922FFE827E4E5890063AC95 /* SignInView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -105,6 +123,7 @@
 				795E52D727DE3568008CF240 /* PreferenceKeys.swift */,
 				795E52DB27DE3B79008CF240 /* Course.swift */,
 				795E52E527DF8221008CF240 /* Model.swift */,
+				7930B3E127E4639E00426BF3 /* Suggestion.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -115,6 +134,8 @@
 				795E52C027DDDE47008CF240 /* Styles.swift */,
 				795E52D927DE38AB008CF240 /* AnimateableFontModifier.swift */,
 				795E52E327DE5850008CF240 /* Animations.swift */,
+				791476BF27E48D7E00E18029 /* AngularButtonStyle.swift */,
+				7922FFE427E4D99B0063AC95 /* InputStyle.swift */,
 			);
 			path = Styles;
 			sourceTree = "<group>";
@@ -228,25 +249,32 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7930B3E027E45B4000426BF3 /* SearchView.swift in Sources */,
 				795E52CD27DE07A8008CF240 /* HomeView.swift in Sources */,
 				795E52C327DDE150008CF240 /* AccountView.swift in Sources */,
 				795E52E227DE53FD008CF240 /* CourseView.swift in Sources */,
 				795E52C527DDF0FA008CF240 /* HexagonView.swift in Sources */,
+				7930B3E227E4639E00426BF3 /* Suggestion.swift in Sources */,
 				795E52C127DDDE47008CF240 /* Styles.swift in Sources */,
 				795E52DE27DE494D008CF240 /* MatchedView.swift in Sources */,
 				795E52CB27DDFDBF008CF240 /* Tab.swift in Sources */,
 				795E52D627DE322B008CF240 /* NavigationBar.swift in Sources */,
+				791476C027E48D7E00E18029 /* AngularButtonStyle.swift in Sources */,
 				795E52C727DDF4C0008CF240 /* BlobView.swift in Sources */,
+				7922FFE927E4E5890063AC95 /* SignInView.swift in Sources */,
 				79D9355227DCED6000171729 /* ContentView.swift in Sources */,
 				795E52DC27DE3B79008CF240 /* Course.swift in Sources */,
 				79D9355027DCED6000171729 /* DesignCodeIOS15App.swift in Sources */,
 				795E52E027DE5364008CF240 /* CourseItem.swift in Sources */,
 				795E52DA27DE38AB008CF240 /* AnimateableFontModifier.swift in Sources */,
+				791476BE27E46FDA00E18029 /* SignUpView.swift in Sources */,
 				795E52E427DE5850008CF240 /* Animations.swift in Sources */,
 				795E52D427DE3115008CF240 /* FeaturedItem.swift in Sources */,
+				7922FFE527E4D99B0063AC95 /* InputStyle.swift in Sources */,
 				795E52E627DF8221008CF240 /* Model.swift in Sources */,
 				795E52D827DE3568008CF240 /* PreferenceKeys.swift in Sources */,
 				795E52C927DDFA54008CF240 /* TabBar.swift in Sources */,
+				7922FFE727E4E52C0063AC95 /* ModalView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
