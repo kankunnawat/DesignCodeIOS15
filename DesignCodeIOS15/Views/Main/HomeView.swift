@@ -16,6 +16,7 @@ struct HomeView: View {
     @State var showCourse = false
     @State var selectedIndex = 0
     @EnvironmentObject var model: Model
+    @AppStorage("isLiteMode") var isLiteMode = true
 
     var body: some View {
         ZStack {
@@ -105,7 +106,7 @@ struct HomeView: View {
                             minX / -10
                         ),
                         axis: (x: 1, y: 1, z: 0))
-                        .shadow(color: Color("Shadow").opacity(0.3), radius: 10, x: 0, y: 10)
+                        .shadow(color: Color("Shadow").opacity(isLiteMode ? 0 : 0.3), radius: 5, x: 0, y: 3)
                         .blur(radius: abs(minX / 40))
                         .overlay(
                             Image(course.image)
@@ -119,12 +120,16 @@ struct HomeView: View {
                             showCourse = true
                             selectedIndex = index
                         }
+                        .accessibilityElement(children: .combine)
+                        .accessibilityAddTraits(.isButton)
                 }
             }
         }
         .tabViewStyle(.page(indexDisplayMode: .never))
         .frame(height: 430)
-        .background(Image("Blob 1").offset(x: 250, y: -100)
+        .background(Image("Blob 1")
+            .offset(x: 250, y: -100)
+            .accessibility(hidden: true)
         )
         .sheet(isPresented: $showCourse) {
             CourseView(namespace: namespace, course: featuredCourses[selectedIndex], show: $showCourse)
@@ -142,6 +147,8 @@ struct HomeView: View {
                         selectedID = course.id
                     }
                 }
+                .accessibilityElement(children: .combine)
+                .accessibilityAddTraits(.isButton)
         }
     }
 

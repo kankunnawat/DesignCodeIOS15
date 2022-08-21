@@ -56,6 +56,9 @@ struct NavigationBar: View {
                 } label: {
                     AvatarView()
                 }
+                .accessibilityElement()
+                .accessibilityLabel("Account")
+                .accessibilityAddTraits(.isButton)
                 .sheet(isPresented: $showAccount) {
                     AccountView()
                 }
